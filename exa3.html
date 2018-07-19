@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String Rotation example</title>
+    <style>
+        div.button{
+            display: inline-block;
+            background: rgba(0, 0, 8, 0.733);
+            padding:20px;
+            color: white;
+            font-size:2em;
+            cursor: pointer;
+            
+        }
+        p.word{
+            font-size:5em;
+            padding-left:20px;
+            padding-right:20px;
+            text-align: center;
+        }
+        div.container{
+            width: 60%;
+            margin: 0 auto;
+        }
+        div.container{
+            display:inline-block; 
+            vertical-align: middle;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class = "row">
+        <div class="button left">&lt</div>
+       <p class="word"></p>
+       <div class="button right">&gt</div>
+    </div>
+    <script>
+        let wordBox = document.querySelector('.word');
+        let leftButton = document.querySelector('.left');
+        let rightButton = document.querySelector('.right');
+        leftButton.addEventListener('click',(e)=>{
+            word = rotateOnceLeft(word);
+            wordBox.textContent = word;
+        });
+        
+        rightButton.addEventListener('click',(e)=>{
+            word = rotateOnceRight(word);
+            wordBox.textContent = word;
+        });
+        
+        let word = "hello";
+        wordBox.textContent = word;
+''
+        function rotateOnceLeft(w){
+            return w.slice(1)+w[0];
+        }
+        function rotateLeft(w,times){
+            let newString;
+            for(let i=0;i<times;i++)
+            w = rotateleft(w);
+            return w;
+        }
+        function rotateOnceRight(w){
+            return w[w.length-1]+w.slice(0,w.length-1);
+        }
+
+        function rotateRight(w,times){
+            //let newString;
+            for(let i=0;i<times;i++)
+            w = rotateRight(w);
+            return w;
+        }
+    </script>
+    
+</body>
+</html>
